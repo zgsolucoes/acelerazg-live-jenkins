@@ -11,11 +11,7 @@ pipeline {
             }
         }
 
-        stage('Notifica slack') {
-             steps {
-                slackSend message: "Testes unitarios executados sem erro"
-            }
-        }
+
 
 // @todo : Criar stages de notificacao
 //         stage('Gera release') {
@@ -27,4 +23,12 @@ pipeline {
 //
 //         }
     }
+   post {
+    success {
+            slackSend message: "Testes unitarios executados com sucesso"
+        }
+    failure {
+         slackSend message: "Testes unitarios executados com erro"
+    }
+   }
 }
