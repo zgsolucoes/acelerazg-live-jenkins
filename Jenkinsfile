@@ -13,7 +13,9 @@ pipeline {
 
 // @todo : Criar stages de notificacao
         stage('Gera release') {
-            sh 'echo "Gerando release...."'
+           steps{
+                 sh 'echo "Gerando release...."'
+           }
         }
 
 // @todo : Criar stages de notificacao
