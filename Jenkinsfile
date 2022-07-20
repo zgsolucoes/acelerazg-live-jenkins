@@ -7,7 +7,7 @@ pipeline {
                 withGradle{
                     sh './gradlew test'
                 }
-                junit 'test-results.xml'
+                junit(testResults: '**/build/test-results/test/*.xml', allowEmptyResults: true)
             }
         }
 
