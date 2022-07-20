@@ -7,11 +7,9 @@ pipeline {
                 withGradle{
                     sh './gradlew test'
                 }
-                junit(testResults: '**/build/test-results/test/*.xml', allowEmptyResults: true)
+
             }
         }
-
-
 
 // @todo : Criar stages de notificacao
 //         stage('Gera release') {
@@ -24,6 +22,9 @@ pipeline {
 //         }
     }
    post {
+    always {
+      junit(testResults: '**/build/test-results/test/*.xml', allowEmptyResults: true)
+    }
     success {
             slackSend message: "Testes unitarios executados com sucesso"
         }
