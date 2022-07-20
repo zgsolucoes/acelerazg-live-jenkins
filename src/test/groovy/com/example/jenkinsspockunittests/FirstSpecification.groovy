@@ -1,3 +1,5 @@
+package com.example.jenkinsspockunittests
+
 import spock.lang.Specification
 
 class FirstSpecification extends Specification {
