@@ -18,7 +18,7 @@ class FirstSpecification extends Specification {
         int result = left + right
 
         then:
-        result == 5
+        result == 4
     }
 
     def "Should be able to remove from list"() {
