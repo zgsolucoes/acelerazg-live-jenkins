@@ -28,7 +28,7 @@ pipeline {
       junit(testResults: '**/build/test-results/test/*.xml', allowEmptyResults: true)
     }
     success {
-            slackSend message: "Testes unitarios executados com sucesso na branch ${BRANCH_NAME}"
+            slackSend message: "Testes unitarios executados com sucesso na branch: ${BRANCH_NAME}"
         }
     failure {
          slackSend message: "Testes unitarios executados com erro na branch : ${BRANCH_NAME}"
